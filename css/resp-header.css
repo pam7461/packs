@@ -1,0 +1,111 @@
+/* HEADER CSS */
+.header{
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  background-color:#fff;
+}
+.header .container{
+  max-width:1080px;
+  height:70px;
+  margin:0 auto;
+  padding:0 10px;  
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  align-items:center;
+}
+h1 a{
+  display:block;
+  width:97px;
+  height:30px;
+  text-indent:-99999px;
+  background:url('../images/logo.png') no-repeat center;
+  background-size:contain;
+}
+.btn-nav{
+  display:grid;
+  gap:6px 0;      
+}
+.btn-nav::before,.btn-nav::after,.btn-nav>span{
+  content:'';
+  display:block;
+  width:30px;
+  height:4px;
+  border-radius:2px;
+  background-color:#000;
+  text-indent:-999999px;
+}
+.main-nav{      
+  background-color:#f9f9f9;
+  position:fixed;      
+  left:100%;      
+  right:-100%;
+  top:70px;   
+  bottom:0;
+  transition:0.3s;
+}
+.main-nav li{
+  border-bottom:1px solid #a9a9a9;
+  padding:12px;
+}
+.btn-nav:hover ~ .main-nav{
+  left:30%;
+  right:0;
+}
+
+.quick-nav{
+  display:none; 
+  justify-content:flex-end;     
+}
+.quick-nav li{
+  margin-left:12px;
+  font-size:12px;
+}
+.icon-sns{
+  display:block;
+  width:20px;
+  height:20px;
+  text-indent:-99999px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+.icon-face{
+  background-image:url('../images/facebook-ico.png');
+}
+.icon-inst{
+  background-image:url('../images/insta-ico.png');
+}
+/* HEADER END */
+
+
+
+@media (min-width:1200px){
+  .header .container{
+    height:111px;
+    padding:0 23px;
+  }
+  h1 a{
+    width:174px;
+    height:58px;
+  }
+  .btn-nav{
+    display:none;
+  }
+  .quick-nav{
+    display:flex;
+  }
+  .main-nav{
+    position:static;
+    display:flex;
+    background-color:#fff;
+  }
+  .main-nav li{
+    border-bottom:none;
+    padding:12px 0 12px 48px;
+  }
+  
+}

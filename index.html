@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빽다방</title>
+  <!-- BX Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <!-- 리셋 -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <!-- 스킵메뉴 -->
+  <link rel="stylesheet" href="./css/skip.css">
+  <!-- 헤더스타일 -->
+  <link rel="stylesheet" href="./css/resp-header.css">
+  <style>
+    .wrap{
+      overflow:hidden;
+    }
+
+    /* 매인슬라이더 */
+    .main-slider{
+      padding-top:70px;
+    }
+    .sec-container{
+      max-width:1728px;
+      margin:0 auto;
+    }
+    .bx-wrapper{
+      box-shadow:none;
+      margin-bottom:0;
+      border:none;
+    }
+    .bx-controls-direction{
+      display:none;
+    }
+    .bx-wrapper .bx-pager{
+      bottom:27px;
+    }
+    .bx-wrapper .bx-pager.bx-default-pager a{
+      background-color:#fff;
+    }
+    .bx-wrapper .bx-pager.bx-default-pager a.active{
+      background-color:#ff0;
+    }
+
+    .flex-container{
+      display:flex;
+      flex-flow:row wrap;
+    }
+    .flex-container>article{
+      width:100%;
+    }
+    .art01{
+      height:285px;
+      background:url('./images/main_sec1.jpg') no-repeat center;
+      background-size:cover;
+    }
+    .art02,.art03,.art04,.art05{
+      height:52vw;
+      max-height:540px;
+      background:url('./images/main_sec2.jpg') no-repeat center;
+      background-size:cover;
+    }
+    .art03{
+      background-image:url('./images/main_sec3.jpg');
+    }
+    .art04{
+      background-image:url('./images/main_sec4.jpg');
+    }
+    .art05{
+      background-image:url('./images/main_sec5.jpg');
+    }
+    .contents{
+      max-width:1080px;
+      height:100%;
+      margin:0 auto;
+      padding:30px 16px 15px;
+      display:flex;
+      flex-flow:column nowrap;
+      justify-content:space-between;
+    }
+    .con-btn{
+      align-self:flex-end;
+    }
+
+    @media (min-width:768px){
+      .contents{
+        padding:40px 16px 24px;
+      }
+    }
+    @media (min-width:1200px){
+      .main-slider{
+        padding-top:111px;
+      }
+      .bx-wrapper .bx-pager{
+        bottom:24px;
+      }
+      .flex-container>.art03{
+        width:60%;
+      }
+      .flex-container>.art04{
+        width:40%;
+      }
+      .art01{
+        height:256px;
+      }
+      .contents{
+        padding:60px 16px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="skip">
+    <a href="#menu01">메뉴1</a>
+    <a href="#menu02">메뉴2</a>
+    <a href="#menu03">메뉴3</a>
+    <a href="#menu04">메뉴4</a>
+  </section>
+  <section class="wrap">
+    <header class="header">
+      <div class="container">
+        <h1>
+          <a href="./index.html">빽다방</a>
+        </h1>
+        <nav>
+          <div class="btn-nav">
+            <span>내비버튼</span>
+          </div>
+          <ul class="quick-nav">
+            <li><a href="#">더본코리아</a></li>
+            <li><a href="#" class="icon-sns icon-face">패이스북</a></li>
+            <li><a href="#" class="icon-sns icon-inst">인스타그램</a></li>
+          </ul>
+          <ul class="main-nav">
+            <li>빽다방</li>
+            <li>메뉴</li>
+            <li>소식</li>
+            <li>커뮤니티</li>
+            <li>매장안내</li>
+            <li>창업안내</li>
+            <li>고객의 소리</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="sec main-slider">
+      <div class="container sec-container">
+        <div class="slider">
+          <div class="slide slide01">
+            <picture>
+              <source media="(min-width:1200px)" srcset="./images/main-banner01-1.jpg">
+              <img src="./images/main-banner01.jpg" alt="매인배너01">
+            </picture>
+          </div>
+          <div class="slide slide02">
+            <picture>
+              <source media="(min-width:1200px)" srcset="./images/main-banner02-1.jpg">
+              <img src="./images/main-banner02.jpg" alt="매인배너02">
+            </picture>
+          </div>
+          <div class="slide slide03">
+            <picture>
+              <source media="(min-width:1200px)" srcset="./images/main-banner03-1.jpg">
+              <img src="./images/main-banner03.jpg" alt="매인배너03">
+            </picture>
+          </div>
+          <div class="slide slide04">
+            <picture>
+              <source media="(min-width:1200px)" srcset="./images/main-banner04-1.jpg">
+              <img src="./images/main-banner04.jpg" alt="매인배너04">
+            </picture>
+          </div>
+        </div>        
+      </div>
+    </section>
+    <section class="sec main-contents">
+      <div class="container sec-container flex-container">
+        <article class="art01">
+          <div class="contents">
+            <div class="con-txt">
+              <h2>the finest quality coffee plants</h2>
+              <h3>paik's coffee story</h3>
+              <p>균형잡힌 바디감으로 긴 여운을 남기는 빽다방 커피를 만나보세요</p>
+            </div>
+            <div class="con-btn">
+              <a href="#">더보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="art02">
+          <div class="contents">
+            <div class="con-txt">
+              <h2>신선한 커피</h2>
+              <h3>fresh coffee</h3>
+              <p>신선한 뉴크롭 원두를 사용하여 추출한 커피메뉴!</p>
+            </div>
+            <div class="con-btn">
+              <a href="#">더보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="art03">
+          <div class="contents">
+            <div class="con-txt">
+              <h2>다양한 음료수</h2>
+              <h3>various beverage</h3>
+              <p>에이드, 티, 주스 등 취향대로 골라 먹는 즐거움</p>
+            </div>
+            <div class="con-btn">
+              <a href="#">더보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="art04">
+          <div class="contents">
+            <div class="con-txt">
+              <h2>달콤한 빽스치노</h2>
+              <h3>sweet paik's ccino</h3>
+              <p>달콤 시원한 빽다방 시그니처 메뉴!</p>
+            </div>
+            <div class="con-btn">
+              <a href="#">더보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="art05">
+          <div class="contents">
+            <div class="con-txt">
+              <h2>맛있는 아이스크림 / 디저트</h2>
+              <h3>tasty ice cream / dessert</h3>
+              <p>달콤한 아이스크림부터 든든한 브레드까지!</p>
+            </div>
+            <div class="con-btn">
+              <a href="#">더보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="art06">6</article>
+        <article class="art07">7</article>
+      </div>
+    </section>
+    <footer class="footer">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae ex, dolores qui vero quidem? Quibusdam eos assumenda, similique ea, accusantium inventore et eaque, sed totam soluta placeat consequuntur est!
+      Labore id enim, ipsam distinctio harum tenetur soluta dolore et culpa numquam nihil molestiae atque quasi provident libero ratione. Consequuntur facilis quo repellat quis adipisci, nisi quibusdam aperiam ipsa saepe.
+      Quibusdam, reprehenderit fugit libero, quam vero cum, voluptatibus fuga est rem tempora veniam dolore enim dignissimos adipisci quas. Tenetur est quis perferendis eaque delectus adipisci mollitia ex obcaecati placeat eos!
+      Alias odit cumque, vero sequi perspiciatis ratione praesentium nam deserunt, ipsam laborum quas? Possimus, repellendus voluptate. Dolor eveniet nihil, laborum, sunt rem rerum eius ex porro expedita, laboriosam at totam?
+      Dolorum minima ea, modi ab tempore est fugit esse doloribus deleniti natus alias qui quis possimus repellendus minus odit maxime. Facilis soluta laudantium repellendus hic fugiat possimus ut itaque facere.
+      Recusandae dolor id sequi obcaecati voluptatum sed eaque atque harum ipsa quasi. Expedita numquam architecto distinctio eum perferendis autem. Perferendis atque similique blanditiis totam repudiandae et placeat quas eius numquam?
+      Voluptatibus sunt est alias quae nam odio, ipsam debitis repellendus iusto dignissimos eligendi aperiam? Magni fugiat, suscipit aperiam delectus perspiciatis eos. Labore quam nostrum laudantium assumenda, distinctio harum? Dolore, voluptatum.
+      Quisquam aliquid adipisci quaerat nulla doloremque neque, eveniet eius ratione in inventore error quas et porro sint esse rem odit deserunt itaque, perspiciatis fuga non blanditiis molestias, dolorem vel! Nam.
+      Doloremque soluta libero quibusdam voluptate et, amet eos optio sit quis non distinctio aliquid delectus nobis. Facilis dolore exercitationem ipsam explicabo, nemo consectetur, molestiae quod id soluta provident sed iste.
+      Quam assumenda asperiores enim, molestias dolorum velit nobis, adipisci minus dolor consectetur eum repellat rerum fuga dignissimos iste at corporis commodi voluptates architecto dolorem. Cupiditate necessitatibus dignissimos nam totam perspiciatis.
+      Iste, dolor quibusdam aliquid harum reprehenderit nemo sequi tempora tempore cupiditate ut. Illo voluptates alias odit suscipit quam, doloribus assumenda accusantium error tempora eligendi et quo itaque mollitia minus ducimus.
+      Ducimus dolorem, labore vel quam autem praesentium necessitatibus optio. Voluptas illo est exercitationem dolore accusantium deserunt? Voluptates labore nisi corporis praesentium. Iusto, minus numquam saepe sunt laboriosam totam repudiandae sint?
+      Molestias qui, autem voluptatem dolorem deserunt dolores ab alias corrupti ipsum! Ipsam veniam voluptates assumenda quisquam. Amet explicabo sunt cumque praesentium, alias temporibus minus consectetur, modi error, cum perspiciatis officia.
+      Vitae cum velit atque nulla saepe sequi, debitis enim? Quia id dolorem similique necessitatibus labore optio iste vel enim, in natus quod fuga ut harum reprehenderit error aperiam architecto quis.
+      In nostrum impedit veritatis autem delectus? Laudantium quas exercitationem quae animi, alias fugiat voluptatum minus doloremque neque. Excepturi consectetur laborum, accusantium quam animi modi iusto distinctio quo sunt. Iusto, enim.
+      Iure, atque obcaecati numquam accusamus autem nisi dignissimos at aperiam distinctio, magnam, amet blanditiis odit? Minus, incidunt reiciendis id molestiae ipsam necessitatibus facilis voluptas itaque, labore fuga sit pariatur voluptatibus.
+      Officia voluptatem fugit aliquid natus unde omnis. Veniam illo minus dolore voluptas, illum, magni nam modi corporis voluptatem asperiores temporibus placeat fugiat ipsum aperiam maxime! Molestiae voluptas illum delectus nam?
+      Excepturi suscipit laboriosam in eaque error hic similique! Voluptas eveniet quod natus ipsum, harum numquam sit minima quae, consequatur soluta dolorem quasi temporibus quos dolore nam? Odit tempora velit doloribus.
+      Aperiam dolorem dolorum et porro aliquid atque, laborum voluptates praesentium repellendus eveniet magnam ducimus at, totam, provident explicabo deleniti reprehenderit soluta omnis eligendi odio? Harum excepturi veniam laborum debitis id?
+      Quaerat, ad. Pariatur, quis. Sapiente, dignissimos dicta ea corrupti labore ipsam eligendi sint qui? Adipisci eius, voluptas vero tempore fuga saepe numquam repudiandae, voluptatibus maxime totam eveniet, officia unde provident!
+    </footer>
+
+  </section>
+  <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+  </script>
+</body>
+</html>

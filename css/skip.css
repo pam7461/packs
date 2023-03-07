@@ -1,0 +1,13 @@
+.skip>a{
+      position:absolute;
+      left:50%;
+      top:0;
+      transform:translate(-50%,-100%);
+      padding:10px;
+      background-color:#000;
+      color:#fff;
+      z-index:9999;
+    }
+    .skip>a:focus{
+      transform:translateY(0);
+    }
