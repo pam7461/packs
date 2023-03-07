@@ -18,8 +18,12 @@
   <!-- 헤더스타일 -->
   <link rel="stylesheet" href="./css/resp-header.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
     .wrap{
       overflow:hidden;
+    }
+    .ds-none{
+      display:none;
     }
 
     /* 매인슬라이더 */
@@ -66,15 +70,31 @@
       background:url('./images/main_sec2.jpg') no-repeat center;
       background-size:cover;
     }
+    .art01{
+      order:1;
+    }
+    .art02{
+      order:2;
+    }
     .art03{
       background-image:url('./images/main_sec3.jpg');
+      order:3;
     }
     .art04{
       background-image:url('./images/main_sec4.jpg');
+      order:4;
     }
     .art05{
       background-image:url('./images/main_sec5.jpg');
+      order:5;
     }
+    .art06{
+      order:6;
+    }
+    .art07{
+      order:7;
+    }
+
     .contents{
       max-width:1080px;
       height:100%;
@@ -83,14 +103,103 @@
       display:flex;
       flex-flow:column nowrap;
       justify-content:space-between;
+    }    
+    .contents h3{
+      font-family: 'Montserrat';    
+      font-size:1.4em;
+      text-transform:uppercase;
+    }
+    .art01 h3{
+      font-size:3.2em !important;
+    }
+    .contents p{
+      font-weight:500;
+      font-size:16px;
+      color:#222;
+    }
+    .contents hr{
+      width:35px;
+      height:2px;
+      margin:20px 0;
+      background-color:black;
     }
     .con-btn{
       align-self:flex-end;
+      position: relative;
+      transition:0.5s;
+    }
+    .con-btn:hover{
+      transform:rotate(360deg);
+      opacity:0;
+    }
+    .con-btn::before,.con-btn::after{
+      content:'';
+      display:block;
+      width:15px;
+      height:2px;
+      border-radius:1px;
+      background-color:#000;
+      position: absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+    .con-btn::before{
+      width:2px;
+      height:15px;
+    }
+    .con-btn a{
+      display:block;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background-color:#fff;
+      text-indent:-999999px;
+    }  
+    .art06 .contents{
+      padding:12px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }  
+    .franchise,.store{
+      border:2px solid #071f60;
+      padding:16px;
+    }
+    .art06 h2{
+      margin-bottom:12px;
+      font-weight:900;
+      font-size:1.2em;
+      color:#071f60;
+      text-transform:uppercase;
+    }
+    .franchise{
+      position: relative;
+    }
+    .art06 .img-box{
+      width:40%;      
+      position: absolute;
+      right:0;
+      bottom:0;
+    }
+    .art06 p{
+      margin-bottom:100px;
+    }
+    .art06 input{
+      display:block;
+      width:80%;
+      margin:0 auto;
+      border:2px solid #071f60;
+      padding:8px;
     }
 
+    
     @media (min-width:768px){
       .contents{
         padding:40px 16px 24px;
+      }
+      .contents h3{
+        font-size:1.8em;
       }
     }
     @media (min-width:1200px){
@@ -100,18 +209,44 @@
       .bx-wrapper .bx-pager{
         bottom:24px;
       }
-      .flex-container>.art03{
+      .flex-container>.art03,.flex-container>.art05{
         width:60%;
       }
-      .flex-container>.art04{
+      .flex-container>.art04,.flex-container>.art06{
         width:40%;
       }
       .art01{
         height:256px;
       }
+      .art05{
+        order:6;
+        margin:12px 0;
+      }
+      .art06{
+        order:5;
+      }
+
       .contents{
         padding:60px 16px 36px;
       }
+      .contents h3{
+        font-size:3.2em;
+      }
+      .con-btn{
+        align-self:flex-start;
+      }
+      .contents p{
+        display:block;
+      }
+      .art03 .contents{
+        float:right;
+        width:700px;       
+      }
+      .art06 .contents{
+        float:right;
+        grid-template-columns:100%;
+        width:400px;
+      }      
     }
   </style>
 </head>
@@ -196,9 +331,10 @@
         <article class="art02">
           <div class="contents">
             <div class="con-txt">
-              <h2>신선한 커피</h2>
-              <h3>fresh coffee</h3>
-              <p>신선한 뉴크롭 원두를 사용하여 추출한 커피메뉴!</p>
+              <h2 class="ds-none">신선한 커피</h2>
+              <h3>fresh<br>coffee</h3>
+              <hr>
+              <p class="ds-none">신선한 뉴크롭 원두를 사용하여 추출한 커피메뉴!</p>
             </div>
             <div class="con-btn">
               <a href="#">더보기</a>
@@ -208,9 +344,10 @@
         <article class="art03">
           <div class="contents">
             <div class="con-txt">
-              <h2>다양한 음료수</h2>
-              <h3>various beverage</h3>
-              <p>에이드, 티, 주스 등 취향대로 골라 먹는 즐거움</p>
+              <h2 class="ds-none">다양한 음료수</h2>
+              <h3>various<br>beverage</h3>
+              <hr>
+              <p class="ds-none">에이드, 티, 주스 등 취향대로 골라 먹는 즐거움</p>
             </div>
             <div class="con-btn">
               <a href="#">더보기</a>
@@ -220,9 +357,10 @@
         <article class="art04">
           <div class="contents">
             <div class="con-txt">
-              <h2>달콤한 빽스치노</h2>
-              <h3>sweet paik's ccino</h3>
-              <p>달콤 시원한 빽다방 시그니처 메뉴!</p>
+              <h2 class="ds-none">달콤한 빽스치노</h2>
+              <h3>sweet<br>paik's ccino</h3>
+              <hr>
+              <p class="ds-none">달콤 시원한 빽다방 시그니처 메뉴!</p>
             </div>
             <div class="con-btn">
               <a href="#">더보기</a>
@@ -232,17 +370,45 @@
         <article class="art05">
           <div class="contents">
             <div class="con-txt">
-              <h2>맛있는 아이스크림 / 디저트</h2>
-              <h3>tasty ice cream / dessert</h3>
-              <p>달콤한 아이스크림부터 든든한 브레드까지!</p>
+              <h2 class="ds-none">맛있는 아이스크림 / 디저트</h2>
+              <h3>tasty<br>ice cream /<br>dessert</h3>
+              <hr>
+              <p class="ds-none">달콤한 아이스크림부터 든든한 브레드까지!</p>
             </div>
             <div class="con-btn">
               <a href="#">더보기</a>
             </div>
           </div>
         </article>
-        <article class="art06">6</article>
-        <article class="art07">7</article>
+        <article class="art06">
+          <div class="contents">
+            <div class="franchise">
+              <h2>franchise</h2>
+              <p>빽다방 창업안내를<br>도와드리겠습니다.</p>
+              <div class="img-box">
+                <img src="./images/main_sec6.png" alt="백종원">
+              </div>
+            </div>
+            <div class="store">
+              <h2>store</h2>
+              <p>원하시는 지역의 매<br>장을 검색해 보세요.</p>
+              <div class="input-box">
+                <input type="search" placeholder="매장검색">
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="art07">
+          <div class="contents">
+            <h2>paik's coffee sns</h2>
+            <p>#빽다방&nbsp;&nbsp;&nbsp;#빽스치노&nbsp;&nbsp;&nbsp;#백종원&nbsp;&nbsp;&nbsp;#아메리카노</p>
+            <hr>
+            <div class="icon-sns">
+              <img src="./images/facebook-ico.png" alt="face">
+              <img src="./images/insta-ico.png" alt="inst">
+            </div>
+          </div>
+        </article>
       </div>
     </section>
     <footer class="footer">
